@@ -26,7 +26,7 @@
 
             </div>
             <div class="mr-8">
-                <button v-on:click="displayCart" v-if="canDisplayCart" class="flex mt-6 text-white bg-black border-0 py-2 px-6 focus:outline-none hover:bg-black rounded-full "> <span class="fa fa-shopping-cart mt-1 mr-2"></span>Cart</button>
+                <button v-on:click="displayCart" v-if="canDisplayCart" class="flex mt-6 text-white bg-black border-0 py-2 px-6 focus:outline-none hover:bg-black rounded-full "> <span class="fa fa-shopping-cart mt-1 mr-2"></span>Cart {{cartcount}}</button>
                 <button v-else disabled  class="flex mt-6 text-white bg-black opacity-25 border-0 py-2 px-6 focus:outline-none hover:bg-black rounded-full " ><span class="fa fa-shopping-cart mt-1 mr-2"></span>Cart</button>
             
                     
@@ -299,6 +299,9 @@
             canDisplayCart(){
                 return this.cart.length > 0 ? true : false
            },
+            cartcount(){
+                return this.cart.length
+            }
         }
     });
 </script>
