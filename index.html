@@ -185,11 +185,13 @@
                 }
             },
             fetchFlteredLessons(){
+                console.log(this.userInput)
                 fetch(`https://umu-cst2-individual.herokuapp.com/collection/lesson/search?search=${this.userInput}`)
                 .then(res => {
                     return res.json()
                 })
                 .then(data => {
+                    console.log(data)
                     this.lessons = data
                 })
                 .catch(err => {
